@@ -1,1 +1,1 @@
-# amyloid_surface_analysis
+# Amyloid Surface Analysis
