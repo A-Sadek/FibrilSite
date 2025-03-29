@@ -20,7 +20,7 @@ setup(
         "biopython==1.79",
         "scipy==1.5.4",
         "StrBioInfo==0.9a0.dev1",
-        "open3d== 0.15.1"
+        "open3d"
     ],
     include_package_data=True,
     classifiers=[
