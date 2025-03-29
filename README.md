@@ -8,3 +8,4 @@ Fibril surface sites are extracted from fibril surface as point clouds featurize
 
 Fibril structures were pre-processed and surface features were computed using the **MaSIF** (Molecular Surface Interaction Fingerprinting) framework, as described in 
 > Gainza, P. *et al.* *Nat Methods* **17**, 184–192 (2020). [https://doi.org/10.1038/s41592-019-0666-6]
+
