@@ -13,12 +13,12 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
-        "numpy==1.19.2",
+        "numpy",
         "pandas==0.25.3",
-        "seaborn==0.11.2",
-        "matplotlib==3.2.2",
-        "biopython==1.79",
-        "scipy==1.5.4",
+        "seaborn",
+        "matplotlib",
+        "biopython",
+        "scipy",
         "StrBioInfo==0.9a0.dev1",
         "open3d"
     ],
