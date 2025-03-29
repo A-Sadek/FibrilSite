@@ -1,0 +1,24 @@
+[project]
+name = "fibrilsite"
+version = "1.0"
+description = "A package for aiding fibril site definition"
+readme = "README.md"
+requires-python = "==3.6"
+license = {text = "MIT"}
+authors = [
+  {name = "Ahmed Sadek", email = "ahmed.sadek@epfl.ch"}
+]
+dependencies = [
+  "numpy==1.19.2",
+  "pandas==0.25.3",
+  "seaborn==0.11.2",
+  "matplotlib==3.2.2",
+  "biopython==1.79",
+  "scipy==1.5.4",
+  "StrBioInfo==0.9a0.dev1",
+  "open3d==0.15.2"
+  ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
