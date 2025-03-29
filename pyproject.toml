@@ -3,7 +3,7 @@ name = "fibrilsite"
 version = "1.0"
 description = "A package for aiding fibril site definition"
 readme = "README.md"
-requires-python = "==3.6.13"
+requires-python = ">=3.6"
 license = {text = "MIT"}
 authors = [
   {name = "Ahmed Sadek", email = "ahmed.sadek@epfl.ch"}
