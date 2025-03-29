@@ -8,7 +8,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Ahmed Sadek",
     author_email="ahmed.sadek@epfl.ch",
-    python_requires="==3.6.13",
+    python_requires=">=3.6",
     license="MIT",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
