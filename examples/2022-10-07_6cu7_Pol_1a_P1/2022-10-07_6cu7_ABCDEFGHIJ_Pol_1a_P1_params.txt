@@ -1,0 +1,10 @@
+2022-10-07
+Pocket id: Pol_1a_P1
+PDB file: ./MaSIF_output/pdbs/6cu7_ABCDEFGHIJ.pdb
+PLY file: ./MaSIF_output/pred_surfaces/6cu7_ABCDEFGHIJ.ply
+Start resid: 85, Start atom: HB1
+End resid: 97, End atom: HZ1
+Guard start resid: 83, Guard start atom: C
+Guard end resid: 97, Guard end atom: O
+Start groove chains: ['I', 'G', 'C', 'E', 'A'], Start groove resids: [85, 86, 87, 90, 92, 95, 97]
+End groove chains: ['I', 'G', 'C', 'E', 'A'], End groove resids: [85, 86, 87, 90, 92, 95, 97]
