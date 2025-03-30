@@ -86,7 +86,6 @@ def ply_parser(out_path, ply_file, ):
     """
     # info container
     dic = {'surf_coords' :[],
-           'surf_iface'  :[],
            'surf_charge' :[],
            'surf_hbond'  :[],
            'surf_hphob'  :[],
@@ -100,9 +99,6 @@ def ply_parser(out_path, ply_file, ):
         # get surface point coords
         surf_x, surf_y, surf_z = float(line.split()[0]), float(line.split()[1]), float(line.split()[2])
         surf_coords = np.array([surf_x, surf_y, surf_z])
-        
-        # get coord iface
-        surf_iface = float(line.split()[3])
         
         # get coord charge
         surf_charge = float(line.split()[4])
@@ -118,7 +114,6 @@ def ply_parser(out_path, ply_file, ):
         surf_norm_coords = np.array([surf_nx, surf_ny, surf_nz])
                 
         dic['surf_coords'].append(surf_coords)
-        dic['surf_iface'].append(surf_iface)
         dic['surf_charge'].append(surf_charge)
         dic['surf_hbond'].append(surf_hbond)
         dic['surf_hphob'].append(surf_hphob)
@@ -542,75 +537,3 @@ def filter_by_range(df_atom_sasa, df_pocket_isolate, resid, chain, atom, output,
     df_pocket_refined.to_csv(f'{output}/{datetime.date.today()}_{os.path.basename(pdb_file).split("_")[0]}_{pocket_id}_refined.csv')
     
     return df_pocket_refined
-
-## Plotting
-def plot_pocket_properties_boxplot(df, out_path, identifier, EXPORT=False):
-    """
-    This function is to plot the graft scores from the given data frame and outputted to the defined folder 
-
-    - df: the DataFrame that will be used for the analysis
-    - outpath: the dir where the resulted df will be exported
-    - identifier: the desired name to identify the run
-    - EXPORT: to export the figure, the default is "NO", set to "YES" for exporting 
-    """
-    
-    fig, axs = plt.subplots( 1, 4, figsize=[15,6], )
-    fig.subplots_adjust(top=5)
-    
-    sns.boxplot(y='surf_charge',     data=df,       ax=axs[0],    color="#1E90FF")
-    sns.boxplot(y='surf_hphob',      data=df,       ax=axs[1],    color="#EE82EE")
-    sns.boxplot(y='surf_hbond',      data=df,       ax=axs[2],    color="#00FF7F")
-    sns.boxplot(y='surf_iface',      data=df,       ax=axs[3],    color="#FF4500")
-    
-    #Formatting   
-    axs[0].set_ylabel('Electrostatics', fontsize=15)
-    #axs[0].set_ylim(-5,5)
-    
-    axs[1].set_ylabel('Hydrophobicity', fontsize=15)
-    #axs[1].set_ylim(-5,5)
-    
-    axs[2].set_ylabel('H-bonds donors/acceptors', fontsize=15)
-    axs[2].set_ylim(-1.1,1.1)
-    
-    axs[3].set_ylabel('PPI-potential', fontsize=15)
-    axs[3].set_ylim(-1.1,1.1)
-
-    plt.suptitle(f"{identifier}"+'\n', fontsize=22, fontweight = "bold" , y = 0.98)
-    plt.tight_layout(h_pad=2.5, w_pad=3.0)
-    if EXPORT:
-        plt.savefig(f"{out_path}/{datetime.date.today()}_{identifier}_properties_boxplot.png", format="png" ,dpi=300, transparent=True)
-    #plt.close()
-    
-    return plt.tight_layout(h_pad=2.5, w_pad=3.0)
-
-def plot_pocket_properties_violinplot(df, out_path, identifier, EXPORT=False):
-    """
-    This function is to plot the graft scores from the given data frame and outputted to the defined folder 
-
-    - df: the DataFrame that will be used for the analysis
-    - outpath: the dir where the resulted df will be exported
-    - identifier: the desired name to identify the run
-    - EXPORT: to export the figure, the default is "NO", set to "YES" for exporting 
-    """
-    
-    fig, axs = plt.subplots( 1, 4, figsize=[15,6], )
-    fig.subplots_adjust(top=5)
-    
-    sns.violinplot(y='surf_charge',     data=df,       ax=axs[0],    color="#1E90FF")
-    sns.violinplot(y='surf_hphob',      data=df,       ax=axs[1],    color="#EE82EE")
-    sns.violinplot(y='surf_hbond',      data=df,       ax=axs[2],    color="#00FF7F")
-    sns.violinplot(y='surf_iface',      data=df,       ax=axs[3],    color="#FF4500")
-    
-    #Formatting   
-    axs[0].set_ylabel('Electrostatics', fontsize=15)
-    axs[1].set_ylabel('Hydrophobicity', fontsize=15)
-    axs[2].set_ylabel('H-bonds donors/acceptors', fontsize=15)
-    axs[3].set_ylabel('PPI-potential', fontsize=15)
-
-    plt.suptitle(f"{identifier}"+'\n', fontsize=22, fontweight = "bold" , y = 0.98)
-    plt.tight_layout(h_pad=2.5, w_pad=3.0)
-    if EXPORT:
-        plt.savefig(f"{out_path}/{datetime.date.today()}_{identifier}_properties_violinplot.png", format="png" ,dpi=300, transparent=True)
-    #plt.close()
-    
-    return plt.tight_layout(h_pad=2.5, w_pad=3.0)
