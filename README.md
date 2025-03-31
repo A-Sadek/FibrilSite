@@ -31,9 +31,5 @@ Or
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=fibrilsite
 
-
-
-
-
-
 ### Fibril sites alignment 
+
