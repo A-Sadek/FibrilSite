@@ -24,7 +24,7 @@ Or
 
     pip install fibrilsite
 
-
+3- Install PyMesh following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
 
 
