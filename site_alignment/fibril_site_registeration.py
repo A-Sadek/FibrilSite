@@ -1,12 +1,10 @@
 # This script is to run the fibril site registeration 
 
 ## libraries
-
 import argparse
 from fibrilsite import execute_global_registration, refine_registration, ply_parser_hull, best_registration, global_reg_pipeline, registrate_all_pockets
 
 ## Functions
-
 def create_parser():
     """
     Create a CLI parser.
