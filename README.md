@@ -8,7 +8,7 @@ Fibril structures were pre-processed and surface features were computed using th
 > Gainza, P. *et al.* *Nat Methods* **17**, 184–192 (2020). [https://doi.org/10.1038/s41592-019-0666-6]
 
 ### Fibril sites definition
-Fibril site definition is peformed as described in the *fibril_grooves_extractor.ipynb* notebook in the example folder. 
+Fibril site definition is peformed as in the *fibril_grooves_extractor.ipynb* notebook found in the example folder. 
 
 To execute the notebook you need to install the code package containing all the required funtions as follows: 
 
