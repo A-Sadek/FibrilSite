@@ -14,7 +14,7 @@ To execute the notebook you need to install the code package containing all the 
 
 1- create a conda environment with python version 3.6
 
-conda create -n fibrilsite python=3.6
+    conda create -n fibrilsite python=3.6
 
 
 
