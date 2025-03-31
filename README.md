@@ -16,7 +16,7 @@ To execute the notebook you need to install the code package containing all the 
 
     conda create -n fibrilsite python=3.6
 
-2 - Install the fibrilsite package
+2 - Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
@@ -24,8 +24,12 @@ Or
 
     pip install fibrilsite
 
-3- Install **PyMesh** following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
+3- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
+4- Export the **fibrilsite** environment to Jupyter as follows:
+
+    conda install -c anaconda ipykernel -y
+    python -m ipykernel install --user --name=fibrilsite
 
 
 
