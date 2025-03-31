@@ -10,7 +10,7 @@ Fibril structures were pre-processed and surface features were computed using th
 ### Fibril sites definition
 Fibril site definition is peformed as described in the *fibril_grooves_extractor.ipynb* notebook in the example folder. 
 
-To execute the notebook you need to install the code package containing all the required funtions as follows:
+To execute the notebook you need to install the code package containing all the required funtions as follows: \
     1- create a conda environment with python version 3.6
 
     conda create -n fibrilsite python=3.6
