@@ -9,6 +9,7 @@ authors = [
   {name = "Ahmed Sadek", email = "ahmed.sadek@epfl.ch"}
 ]
 dependencies = [
+  "scikit-learn",
   "numpy",
   "pandas==0.25.3",
   "seaborn",
@@ -17,7 +18,8 @@ dependencies = [
   "scipy",
   "StrBioInfo==0.9a0.dev1",
   "open3d",
-  "scikit-learn"
+  "notebook",
+  "jupyterlab"
   ]
 
 [build-system]

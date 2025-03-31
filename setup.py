@@ -13,6 +13,7 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
+        "scikit-learn",
         "numpy",
         "pandas==0.25.3",
         "seaborn",
@@ -21,7 +22,8 @@ setup(
         "scipy",
         "StrBioInfo==0.9a0.dev1",
         "open3d",
-        "scikit-learn"
+        "notebook", 
+        "jupyterlab"
     ],
     include_package_data=True,
     classifiers=[
