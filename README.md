@@ -18,7 +18,7 @@ To execute the notebook you need to install the code package containing all the 
 
 2 - Install the fibrilsite package
 
-    pip install https://github.com/A-Sadek/FibrilSite.git
+    pip install git+https://github.com/A-Sadek/FibrilSite.git
 
 Or
 
