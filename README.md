@@ -16,7 +16,7 @@ To execute the notebook you need to install the code package containing all the 
 
     conda create -n fibrilsite python=3.6
 
-2 - Install the code package in the **fibrilsite** environment 
+2- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
