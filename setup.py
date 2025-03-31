@@ -20,7 +20,8 @@ setup(
         "biopython",
         "scipy",
         "StrBioInfo==0.9a0.dev1",
-        "open3d"
+        "open3d",
+        "scikit-learn"
     ],
     include_package_data=True,
     classifiers=[
