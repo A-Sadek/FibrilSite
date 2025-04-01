@@ -49,7 +49,7 @@ def main():
     
     ### creating a list of the pocket names based on the directory dictionnary
     names = np.array(list(path_dic.keys()))
-    print(names)
+    #print(names)
         
     #### perform alignments
     """ 
@@ -57,7 +57,7 @@ def main():
         - Uses input features (including shape index) as features
         - Matches on the correspondence set
     """
-    df_input = registrate_all_pockets(n_regs=5, path_dic=path_dic, df_pockets=df_pockets, use_input_features=True, output=output)
+    df_input = registrate_all_pockets(n_regs=5, path_dic=path_dic, df_pockets=df_pockets, output=output)
     df_input.to_csv(f'{output}/{datetime.date.today()}_all_pockets_input_features_registered.csv')
     
     print('Alignments done !')
