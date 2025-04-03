@@ -23,7 +23,8 @@ setup(
         "StrBioInfo==0.9a0.dev1",
         "open3d",
         "notebook", 
-        "jupyterlab"
+        "jupyterlab",
+        "ProDy"
     ],
     include_package_data=True,
     classifiers=[
