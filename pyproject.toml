@@ -19,6 +19,8 @@ dependencies = [
   "StrBioInfo==0.9a0.dev1",
   "notebook",
   "jupyterlab",
+  "open3d",
+  "prody"
   ]
 
 [build-system]
