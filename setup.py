@@ -23,6 +23,7 @@ setup(
         "StrBioInfo==0.9a0.dev1",
         "notebook", 
         "jupyterlab",
+        "ipykernel",
         "open3d",
         "prody"
     ],
