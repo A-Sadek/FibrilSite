@@ -20,7 +20,6 @@ dependencies = [
   "open3d",
   "notebook",
   "jupyterlab",
-  "ProDy"
   ]
 
 [build-system]
