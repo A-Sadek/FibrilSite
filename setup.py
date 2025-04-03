@@ -24,7 +24,6 @@ setup(
         "open3d",
         "notebook", 
         "jupyterlab",
-        "ProDy"
     ],
     include_package_data=True,
     classifiers=[
