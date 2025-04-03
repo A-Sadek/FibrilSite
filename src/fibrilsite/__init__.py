@@ -529,13 +529,13 @@ def filter_by_range(df_atom_sasa, df_pocket_isolate, resid, chain, atom, output,
 def execute_global_registration(source_pcd, target_pcd, source_feats,
                                 target_feats, distance_threshold = 1.5, verbose:bool = False):
     """
-    This function is to use Runsac to align the pockets' point clouds
+    This function is to use Ransac to align the pockets' point clouds
     
     source_pcd           : source pcd that will be the target to align on
     target_pcd           : target pcd that will be aligned to source pcd
     source_feats         : source pcd features that will be used in the alignment
     target_feats         : target pcd features that will be used in the alignment
-    distance threshold   : Runsac distance threshold to align two pcd, 1.5 was adopted from MaSIF seed search  
+    distance threshold   : Ransac distance threshold to align two pcd, 1.5 was adopted from MaSIF seed search  
     verbose                    : Parameter controlling verbosity
     """
     
@@ -565,7 +565,7 @@ def refine_registration(source_pcd, target_pcd, result_ransac, distance_threshol
     target_pcd           : target pcd that the source pcd will aligned to
     source_feats         : source pcd features that will be used in the alignment
     target_feats         : target pcd features that will be used in the alignment
-    distance threshold   : Runsac distance threshold to align two pcd, 1.0 was adopted from MaSIF seed search  
+    distance threshold   : Ransac distance threshold to align two pcd, 1.0 was adopted from MaSIF seed search  
     """
     
     if verbose:
@@ -761,7 +761,7 @@ def global_reg_pipeline(source_pocket:str, target_pocket:str, path_dic:dict, df_
     )
 
     # storing the performances and attributes of the results
-    ## from the runsac run
+    ## from the ransac run
     ransac_rmse = result_ransac.inlier_rmse
     ransac_fitness = result_ransac.fitness
 
@@ -798,8 +798,8 @@ def global_reg_pipeline(source_pocket:str, target_pocket:str, path_dic:dict, df_
     output_df = pd.DataFrame({
         'source_pocket':[source_pocket], 
         'target_pocket':[target_pocket], 
-        'runsac_rmse':[ransac_rmse], 
-        'runsac_fitness':[ransac_fitness],
+        'ransac_rmse':[ransac_rmse], 
+        'ransac_fitness':[ransac_fitness],
         'ransac_nb_corres':[len(np.asarray(result_ransac.correspondence_set))],
         'icp_rmse':[icp_rmse], 
         'icp_fitness':[icp_fitness], 
