@@ -21,7 +21,6 @@ setup(
         "biopython",
         "scipy",
         "StrBioInfo==0.9a0.dev1",
-        "open3d==0.15",
         "notebook", 
         "jupyterlab",
     ],
