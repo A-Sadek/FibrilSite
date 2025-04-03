@@ -834,3 +834,68 @@ def registrate_all_pockets(n_regs:int, path_dic:dict, df_pockets:pd.DataFrame, o
 
     return df
 
+# Alignmnet analysis functions
+
+def get_input_desc_diff(df_all_info:pd.DataFrame, df:pd.DataFrame, idx:int, input_feats_npy:list) -> pd.DataFrame:
+    """ This function calculates the Input features difference """ 
+    
+    # define the open3d results file path 
+    path_ = [p for p in input_feats_npy if df.at[idx, 'source_pocket'] in p
+            if df.at[idx, 'target_pocket'] in p]
+    assert len(path_) == 1, 'Path finding ERROR'
+    path_ = path_[0]
+    
+    # load the results file
+    reg_results = np.load(path_, allow_pickle=True).item()['icp_test']
+    
+    # get the correspondences indicies
+    source_corres_set = reg_results['corres_set'][0][:,0]
+    target_corres_set = reg_results['corres_set'][0][:,1]
+    assert len(source_corres_set) == len(target_corres_set)    
+    
+    # get the corres set properties
+    ## for source pocket
+    df_src = df_all_info[df_all_info.pocket_id == df.at[idx, 'source_pocket']].reset_index(drop=True)
+    source_input_si    = df_src['input_si'].to_numpy()[source_corres_set]
+    source_surf_charge = df_src['input_charge'].to_numpy()[source_corres_set]
+    source_surf_hphob  = df_src['input_hphob'].to_numpy()[source_corres_set]
+    source_surf_hbonds = df_src['input_hbonds'].to_numpy()[source_corres_set]
+    
+    feats_source = np.stack(( source_surf_charge, source_surf_hphob, source_surf_hbonds, source_input_si), axis=1)
+    
+    ## for target pocket
+    df_target = df_all_info[df_all_info.pocket_id == df.at[idx, 'target_pocket']].reset_index(drop=True)
+    target_input_si    = df_target['input_si'].to_numpy()[target_corres_set]
+    target_surf_charge = df_target['input_charge'].to_numpy()[target_corres_set]
+    target_surf_hphob  = df_target['input_hphob'].to_numpy()[target_corres_set]
+    target_surf_hbonds = df_target['input_hbonds'].to_numpy()[target_corres_set]
+    
+    feats_target = np.stack(( target_surf_charge, target_surf_hphob, target_surf_hbonds, target_input_si), axis=1)
+    
+    assert feats_source.shape == feats_target.shape, 'Feats parsing failure'
+    
+    input_desc_diff = np.mean(np.linalg.norm(feats_target - feats_source, axis = 1))
+
+    return input_desc_diff
+
+def calc_input_feat_diff(df:pd.DataFrame, df_all_info:pd.DataFrame, input_feats_npy:list, output:str, export:bool=False, ident=None ) -> pd.DataFrame :
+    """ This function is to calculate the input feat differece, raw and weighted """
+
+    # calculate the input feature difference
+    input_feat_diff_vessel = []
+
+    for idx01 in df.index:
+        input_feat_diff_v = get_input_desc_diff(df_all_info=df_all_info, df=df, idx=idx01, input_feats_npy=input_feats_npy)
+
+        # append    
+        input_feat_diff_vessel.append(input_feat_diff_v)
+
+    # add to the dataframe
+    df.insert(9, 'icp_mean_input_diff', input_feat_diff_vessel)
+
+    assert len(input_feat_diff_vessel) == df.shape[0]
+
+    if export and ident != None:
+        df.to_csv(os.path.join(output, str(ident) + '_matches.csv'))
+    
+    return df
