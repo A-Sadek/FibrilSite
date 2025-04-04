@@ -1,5 +1,5 @@
 # FibrilSite
-**FibrilSite** is a computational pipeline to define fibril sites and identify shared features across a database of defined sites. 
+**FibrilSite** is a computational pipeline to define fibril sites (i.e., pockets) and identify shared features across a database of defined sites. 
 
 Fibril surface sites are extracted from fibril surface as point clouds featurized with surface properties including Poisson–Boltzmann continuum electrostatics, hydrophobicity, shape index and hydrogen bond donors/acceptor patterns. 
 
@@ -36,4 +36,9 @@ Or
     python -m ipykernel install --user --name=fibrilsite
 
 ### Fibril sites alignment 
+The defined sites are aligned in an all vs all manner using Open3d via the provided scripts and instructions in the respective folder
+
+### Fibril sites alignment analysis
+The aligned sites are analysed based on the shared surface fraction and the similarity of their surface geometrical and physicochemical features using the provided analysis notebook 
+
 
