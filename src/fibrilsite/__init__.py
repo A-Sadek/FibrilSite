@@ -525,6 +525,45 @@ def filter_by_range(df_atom_sasa, df_pocket_isolate, resid, chain, atom, output,
     
     return df_pocket_refined
 
+def filter_by_range_looped(df_atom_sasa, df_pocket, fibril_chains, resid, atom, output, pocket_id, pdb_file, dist_thresh=5.0):
+    """
+    This function is to remove points in the proximity of a certain residue
+    
+    df_atom_sasa         : Dataframe contianing the atoms' coords
+    df_pocket            : Dataframe containing the isolated surface point of the pocket
+    fibril_chains        : List of fibril chains to loop through
+    resid                : Desired res as anchor
+    atom                 : Desired res's atom
+    output               : File exporting desitination
+    pocket_id            : Pocket name
+    pdb_file             : pdb file path
+    dist_thresh          : Distance from the res to remove the surface point
+    """
+    
+    idx = [] # container for indicies to drop
+    
+    for chain in fibril_chains: 
+        atom_coord  = np.array(df_atom_sasa[(df_atom_sasa.resid == resid) & (df_atom_sasa.chain == chain) & (df_atom_sasa.atom_type == atom)]['coords'].tolist())[0]
+        surf_coord  = np.array(surface_atomic_coord_finder(df_surf=df_pocket, atomic_coord=atom_coord, pdb_file=pdb_file)['surf_coords'].tolist())[0]
+        
+        df_to_remove = df_pocket.copy()
+    
+        df_to_remove['dist_from_mid'] = df_to_remove['surf_coords'].apply(lambda x: np.linalg.norm(x-surf_coord))
+        df_to_remove = df_to_remove[(df_to_remove.dist_from_mid < dist_thresh)]
+    
+        idx.extend(df_to_remove.index.tolist())
+    
+    df_pocket_refined = df_pocket.copy()
+    df_pocket_refined = df_pocket_refined[~df_pocket_refined.index.isin(list(set(idx)))]
+    df_pocket_refined.reset_index(drop=True, inplace=True)
+    
+    print(df_pocket_refined.shape)
+    
+    # export
+    df_pocket_refined.to_csv(f'{output}/{datetime.date.today()}_{os.path.basename(pdb_file).split("_")[0]}_{pocket_id}_refined.csv')
+    
+    return df_pocket_refined
+
 # Alignmnet functions
 def execute_global_registration(source_pcd, target_pcd, source_feats,
                                 target_feats, distance_threshold = 1.5, verbose:bool = False):
