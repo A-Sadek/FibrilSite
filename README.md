@@ -39,6 +39,6 @@ Or
 The defined sites are aligned in an all vs all manner using Open3d via the provided scripts and instructions in the respective folder
 
 ### Fibril sites alignment analysis
-The aligned sites are analysed based on the shared surface fraction and the similarity of their surface geometrical and physicochemical features using the provided analysis notebook 
+The aligned sites are analysed based on the shared surface fraction and the similarity of their surface geometrical and physicochemical features using the provided analysis notebook in the respective folder
 
 
