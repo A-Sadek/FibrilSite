@@ -646,7 +646,7 @@ def ply_parser_hull(ply_file:str, out_path=None ) -> pd.DataFrame:
         surf_coords = np.array([surf_x, surf_y, surf_z])
                 
         # get surface normals
-        surf_nx, surf_ny, surf_nz = float(line.split()[7]), float(line.split()[8]), float(line.split()[9])
+        surf_nx, surf_ny, surf_nz = float(line.split()[6]), float(line.split()[7]), float(line.split()[8])
         surf_norm_coords = np.array([surf_nx, surf_ny, surf_nz])
 
         # add to dict       
