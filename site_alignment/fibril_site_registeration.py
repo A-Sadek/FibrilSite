@@ -1,7 +1,9 @@
 # This script is to run the fibril site registeration 
 
 ## libraries
-import argparse
+import os, glob, argparse, datetime
+import numpy as np
+import pandas as pd
 from fibrilsite import execute_global_registration, refine_registration, ply_parser_hull, best_registration, global_reg_pipeline, registrate_all_pockets
 
 ## Functions
@@ -11,8 +13,9 @@ def create_parser():
     :return: the parser object.
     """
     parse = argparse.ArgumentParser()
-    parse.add_argument("--info_file",   type=str, nargs=1, help="CSV containing the sites input feats.")
-    parse.add_argument("--plys_folder", type=str, nargs=1, help="Folder contaning sites ply files.")
+    parse.add_argument("--info_file",     type=str, nargs=1, help="CSV containing the sites input feats.")
+    parse.add_argument("--sites_folder",  type=str, nargs=1, help="Folder contaning site files.")
+    parse.add_argument("--output_folder", type=str, nargs=1, help="Path to results export folder.")
     return parse
 
 def parse_args(parser):
@@ -31,11 +34,12 @@ def main():
     
     # Parse arguments
     args = parse_args(create_parser())
-    df_pockets = pd.read_csv(args.info_file[0],index_col=0).rename(columns={'pocket_id':'pocket'})
-    files = args.plys_folder[0]
+    df_pockets  = pd.read_csv(os.path.abspath(args.info_file[0]), index_col=0).rename(columns={'pocket_id':'pocket'})
+    files       = os.path.abspath(args.sites_folder[0])
+    output_root = os.path.abspath(args.output_folder[0])
 
     ## make output dir
-    output = f'./{datetime.date.today()}_registration_outputs/'
+    output = os.path.join(os.path.abspath(output_root), str(datetime.date.today())+"_registration_outputs")
     os.makedirs(output, exist_ok=0)
     
     # check point
@@ -44,7 +48,7 @@ def main():
     ### get the path to ply files of each pocket
     path_dic = {}
     
-    for path in glob.iglob(os.path.join(files, '*_hull.ply')):
+    for path in glob.iglob(os.path.join(files, "*", "*_hull.ply")):
         path_dic[os.path.basename(path).split('convex')[0].strip('_')] = path
     
     ### creating a list of the pocket names based on the directory dictionnary
