@@ -638,7 +638,7 @@ def ply_parser_hull(ply_file:str, out_path=None ) -> pd.DataFrame:
           }
     # Parse the ply file
     with open(ply_file, 'r') as f:
-        lines = [line.strip() for line in f.readlines() if not line[0].isalpha() and len(line.split()) == 10]
+        lines = [line.strip() for line in f.readlines() if not line[0].isalpha() and len(line.split()) == 9]
     
     for line in lines:
         # get surface point coords
