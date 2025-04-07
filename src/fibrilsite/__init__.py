@@ -7,6 +7,7 @@ import open3d as o3d
 import numpy as np
 import pandas as pd
 from shutil import copyfile
+from tqdm import tqdm
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -855,21 +856,22 @@ def registrate_all_pockets(n_regs:int, path_dic:dict, df_pockets:pd.DataFrame, o
     Args:
         n_regs (int): See doc global_reg_pipeline()
     """
-    # container for output df
-    vessel = []
-
-    # loop over every pocket in the training set (about 8min)
+    # create output for csvs
+    csv_out = os.path.join(output, "reg_csvs")
+    os.makedirs(csv_out, exist_ok=0)
+    
+    # loop over every pocket in selected sites
     for n in range(len(path_dic.keys())):
         for m in range(n+1, len(list(path_dic.keys()))):
 
             source = list(path_dic.keys())[n]
             target = list(path_dic.keys())[m]
-            print(f"source:{source} , target:{target}")
 
             result = global_reg_pipeline(source_pocket=source, target_pocket=target, path_dic=path_dic, df_pockets=df_pockets, n_regs = n_regs, output=output)
-            vessel.append(result)
+            result.to_csv(os.path.join(csv_out, source+"_"+target+"_alignment.csv"))
+            print(f"source:{source} , target:{target}")
     
-    df = pd.concat(vessel).reset_index(drop=1)
+    df = pd.concat([p.strip() for p in tqdm(glob.iglob(os.path.join(csv_out, "*.csv")), desc="collecting results csvs")]).reset_index(drop=1)
 
     return df
 
