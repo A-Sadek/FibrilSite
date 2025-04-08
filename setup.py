@@ -15,7 +15,6 @@ setup(
     install_requires=[
         "scikit-learn",
         "numpy",
-        "pandas==0.25.3",
         "seaborn",
         "matplotlib",
         "biopython",
