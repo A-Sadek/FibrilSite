@@ -22,7 +22,7 @@ Or
 
 3- Install Openbabel
 
-    conda install conda-forge::openbabel
+    conda install conda-forge::openbabel -y
 
 4- Install Jupyter 
     
