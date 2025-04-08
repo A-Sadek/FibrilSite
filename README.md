@@ -26,15 +26,11 @@ Or
 
 3- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
-4- Install Openbabel
-
-    conda install conda-forge::openbabel
-
-5- Install the The StructuralBioInformatics Library
+4- Install the The StructuralBioInformatics Library
 
     pip install StrBioInfo==0.9a0.dev1
 
-6- Export the **fibrilsite** environment to Jupyter as follows:
+5- Export the **fibrilsite** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=fibrilsite
