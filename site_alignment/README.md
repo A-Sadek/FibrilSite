@@ -11,20 +11,8 @@ To run the defined sites alignment:
 1- Create a conda environment with python version 3.8
     
     conda create -n alignsites python=3.8
- 
-2- Install Jupyter 
-    
-    conda install -y anaconda::jupyter anaconda::ipykernel conda-forge::jupyterlab
 
-3- Install pandas
- 
-    conda install anaconda::pandas
-
-4- Install Openbabel
-
-    conda install conda-forge::openbabel -y
-
-5- Install the code package in the **fibrilsite** environment 
+2- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
@@ -32,7 +20,11 @@ Or
 
     pip install fibrilsite
 
-6- Export the **alignsites** environment to Jupyter as follows:
+3- Install Openbabel
+
+    conda install conda-forge::openbabel -y
+
+4- Export the **alignsites** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=alignsites
