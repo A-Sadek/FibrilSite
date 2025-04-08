@@ -8,7 +8,7 @@ To run the defined sites alignment:
  - fibril_site_input_feats_mapper.ipynb : notebook to map the defined fibril site (i.e., pocket) points to their computed surface features
 
 ## Usage
-1- Create a conda environment with python 3.8
+1- Create a conda environment with python version 3.8
     
     conda create -n alignsites python=3.8
  
