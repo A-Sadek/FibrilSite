@@ -30,7 +30,11 @@ Or
 
     conda install conda-forge::openbabel
 
-5- Export the **fibrilsite** environment to Jupyter as follows:
+5- Install the The StructuralBioInformatics Library
+
+    pip install StrBioInfo==0.9a0.dev1
+
+6- Export the **fibrilsite** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=fibrilsite
