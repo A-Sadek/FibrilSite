@@ -8,6 +8,23 @@ To run the defined sites alignment:
  - fibril_site_input_feats_mapper.ipynb : notebook to map the defined fibril site (i.e., pocket) points to their computed surface features
 
 ## Usage
+1- Create a conda environment
+
+ conda create -n alignsites
+
+2- 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
 
 1- Create an inputs folder containing all the generated ply files for each site (e.g., Pol_1a_P1_convex_hull.ply)
 
@@ -20,3 +37,4 @@ To run the defined sites alignment:
 5- Run the alignments as follows 
     
     source run_fibril_site_registeration.sh
+
