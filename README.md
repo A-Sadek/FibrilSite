@@ -16,21 +16,21 @@ To execute the notebook you need to install the code package containing all the 
 
     conda create -n fibrilsite python=3.6
 
-2- Install pandas v.0.25.3
-
-    conda install pandas==0.25.3 -y
-
-3- Install the The StructuralBioInformatics Library
+2- Install the The StructuralBioInformatics Library
 
     pip install StrBioInfo==0.9a0.dev1
 
-4- Install the code package in the **fibrilsite** environment 
+3- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
 Or
 
     pip install fibrilsite
+
+4- Install pandas v.0.25.3
+
+    conda install pandas==0.25.3 -y
 
 5- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
