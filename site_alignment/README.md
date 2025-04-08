@@ -24,7 +24,11 @@ Or
 
     conda install conda-forge::openbabel -y
 
-4- Export the **alignsites** environment to Jupyter as follows:
+4- Install Open3d v. 0.17
+    
+    conda install open3d==0.17 -y
+    
+5- Export the **alignsites** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=alignsites
