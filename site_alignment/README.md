@@ -24,9 +24,11 @@ Or
 
     conda install conda-forge::openbabel
 
-4- Clean the unused dependencies 
+4- Install Jupyter 
     
-    conda clean -a -y
+    conda install anaconda::jupyter -y
+    conda install anaconda::ipykernel -y
+    conda install conda-forge::jupyterlab -y
 
 5- Export the **alignsites** environment to Jupyter as follows:
 
