@@ -26,7 +26,7 @@ Or
 
 3- Install pandas
 
-    conda install pandas=0.25.3
+    conda install pandas==0.25.3
 
 4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
