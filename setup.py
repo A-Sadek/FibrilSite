@@ -20,7 +20,6 @@ setup(
         "matplotlib",
         "biopython",
         "scipy",
-        "StrBioInfo==0.9a0.dev1",
         "notebook", 
         "jupyterlab",
         "ipykernel",
