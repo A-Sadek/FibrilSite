@@ -26,7 +26,7 @@ Or
 
 4- Install Open3d v. 0.17
     
-    conda install open3d==0.17 -y
+    pip install open3d==0.17 -y
     
 5- Export the **alignsites** environment to Jupyter as follows:
 
