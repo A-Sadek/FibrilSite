@@ -18,7 +18,7 @@ To execute the notebook you need to install the code package containing all the 
 
 2- Install pandas v.0.25.3
 
-    conda install pandas==0.25.3
+    conda install pandas==0.25.3 -y
 
 3- Install the The StructuralBioInformatics Library
 
