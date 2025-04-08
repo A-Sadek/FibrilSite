@@ -24,13 +24,17 @@ Or
 
     pip install fibrilsite
 
-3- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
+3- Install pandas
 
-4- Install the The StructuralBioInformatics Library
+    conda install pandas==0.25.3
+
+4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
+
+5- Install the The StructuralBioInformatics Library
 
     pip install StrBioInfo==0.9a0.dev1
 
-5- Export the **fibrilsite** environment to Jupyter as follows:
+6- Export the **fibrilsite** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=fibrilsite
