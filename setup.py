@@ -20,9 +20,6 @@ setup(
         "matplotlib",
         "biopython",
         "scipy",
-        "notebook", 
-        "jupyterlab",
-        "ipykernel",
         "open3d",
         "prody"
     ],
