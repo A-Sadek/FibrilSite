@@ -9,11 +9,25 @@ To run the defined sites alignment:
 
 ## Usage
 1- Create a conda environment
-
- conda create -n alignsites
-
-2- 
+    
+    conda create -n alignsites
  
+2- Install the code package in the **fibrilsite** environment 
+
+    pip install git+https://github.com/A-Sadek/FibrilSite.git
+
+Or
+
+    pip install fibrilsite
+
+3- Install Openbabel
+
+    conda install conda-forge::openbabel
+
+4- Export the **alignsites** environment to Jupyter as follows:
+
+    conda install -c anaconda ipykernel -y
+    python -m ipykernel install --user --name=alignsites
  
 
 
