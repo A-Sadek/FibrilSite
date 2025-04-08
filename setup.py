@@ -21,6 +21,9 @@ setup(
         "biopython",
         "scipy",
         "open3d",
+        "notebook", 
+        "jupyterlab",
+        "ipykernel",
         "prody"
     ],
     include_package_data=True,
