@@ -81,7 +81,7 @@ To run the defined fibril sites alignment and alignment analysis:
              [ 1-"all_{}_matches.csv" : all site matches | 2-"sel_{}_matches.csv" : site matches satisfying the site similarity condition ] \
         - identified_matches_alignments : Folder containing fibril and site alignments for identified site matches
       
-  **exported information**: \
+    **exported information**: \
         - pocket_matches       : a tuple of pocket (site) matches \
         - pocket_pairs         : a list of pocket (site) matches \
         - source_pocket | target_pocket : aligned pockets (sites) names\
