@@ -135,3 +135,5 @@ Or
 
 or through the **fibril_site_alignment_analysis.ipynb** notebook
 
+9- Validate the matches through visualization 
+
