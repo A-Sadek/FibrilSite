@@ -20,7 +20,11 @@ To execute the notebook you need to install the code package containing all the 
 
     pip install StrBioInfo==0.9a0.dev1
 
-3- Install the code package in the **fibrilsite** environment 
+3- Install Pandas v.0.25.3
+    
+    pip install pandas==0.25.3
+
+4- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
