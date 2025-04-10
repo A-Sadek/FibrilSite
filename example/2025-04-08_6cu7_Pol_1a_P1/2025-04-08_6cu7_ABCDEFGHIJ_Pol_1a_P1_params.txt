@@ -1,7 +1,7 @@
-2022-10-07
+2025-04-08
 Pocket id: Pol_1a_P1
-PDB file: ./MaSIF_output/pdbs/6cu7_ABCDEFGHIJ.pdb
-PLY file: ./MaSIF_output/pred_surfaces/6cu7_ABCDEFGHIJ.ply
+PDB file: ../pdbs/6cu7_ABCDEFGHIJ.pdb
+PLY file: ../plys/6cu7_ABCDEFGHIJ.ply
 Start resid: 85, Start atom: HB1
 End resid: 97, End atom: HZ1
 Guard start resid: 83, Guard start atom: C
