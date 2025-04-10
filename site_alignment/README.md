@@ -95,7 +95,7 @@ To run the defined fibril sites alignment and alignment analysis:
         - combined_fitness_score (**SSmax**): best alignment between two pockets (sites), SSmax = max(icp_fitness_source, icp_fitness_target) \
         - icp_mean_input_diff (**Fdiff**): surface features similarity between the pocket (site) matches, calculated as the Euclidean distance between the surface features computed on inlier correspondences following ICP 
     
-    The *[./scripts/fibril_site_alignment_analysis.py]* script is tailored for the current study. For more customisation in case of site database expansion with sites from other fibrils, you would need to use the provided notebook **fibril_site_alignment_analysis.ipynb**. 
+The *[./scripts/fibril_site_alignment_analysis.py]* script is tailored for the current study. For more customisation in case of site database expansion with sites from other fibrils, you would need to use the provided notebook **fibril_site_alignment_analysis.ipynb**. 
 
 ## Usage
 1- Create a conda environment with python version 3.8
