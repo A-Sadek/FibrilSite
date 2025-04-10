@@ -28,13 +28,9 @@ Or
 
     pip install fibrilsite
 
-4- Install pandas v.0.25.3
+4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
-    pip install pandas==0.25.3
-
-5- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
-
-6- Export the **fibrilsite** environment to Jupyter as follows:
+5- Export the **fibrilsite** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=fibrilsite
