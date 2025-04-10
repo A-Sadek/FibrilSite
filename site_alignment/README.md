@@ -3,11 +3,11 @@ To run the defined fibril sites alignment and alignment analysis:
 
 ## Provided scripts:
 - **01_run_fibril_site_surface_feature_mapping.sh :** \
-    executable script to run [./scripts/fibril_site_input_feats_mapper.py] that will extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
+    executable script to run *[./scripts/fibril_site_input_feats_mapper.py]* that will extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
     
     **params**: \
         - site_src_dir    : Path to folder containing the defined fibril sites. \
-        - input_feats_src : Path to folder contaning MaSIF calculated surface features [/data_preparation/04b-precomputation_12A/precomputation] \
+        - input_feats_src : Path to folder contaning MaSIF calculated surface features *[/data_preparation/04b-precomputation_12A/precomputation]* \
         - output_folder   : Path to root folder for exporting.
 
     **output**: \
@@ -38,7 +38,7 @@ To run the defined fibril sites alignment and alignment analysis:
         - input_hbonds         : surface point calculated hydrogen-bond donor/acceptor potential 
 
 - **02_run_fibril_site_registeration.sh :** \
-    executable script to run [./scripts/fibril_site_registeration.py] that will align the defined fibril sites based on surface features. 
+    executable script to run *[./scripts/fibril_site_registeration.py]* that will align the defined fibril sites based on surface features. 
 
     **params**: \
         - info_file     : CSV containing information of all defined sites including the calculated surface features. \
