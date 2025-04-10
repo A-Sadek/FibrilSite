@@ -2,7 +2,7 @@
 To run the defined fibril sites alignment and alignment analysis:
 
 ## Provided scripts:
-- 01_run_fibril_site_surface_feature_mapping.sh : \
+- **01_run_fibril_site_surface_feature_mapping.sh :** \
     executable script to run [./scripts/fibril_site_input_feats_mapper.py] that will extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
     
     **params**: \
@@ -37,7 +37,7 @@ To run the defined fibril sites alignment and alignment analysis:
         - input_hphob          : surface point calculated hydropathy value \
         - input_hbonds         : surface point calculated hydrogen-bond donor/acceptor potential 
 
-- 02_run_fibril_site_registeration.sh : \
+- **02_run_fibril_site_registeration.sh :** \
     executable script to run [./scripts/fibril_site_registeration.py] that will align the defined fibril sites based on surface features. 
 
     **params**: \
