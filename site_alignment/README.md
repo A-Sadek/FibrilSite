@@ -2,7 +2,7 @@
 To run the defined fibril sites alignment and alignment analysis:
 
 ## Provided scripts:
-- 01_run_fibril_site_surface_feature_mapping.sh : 
+- 01_run_fibril_site_surface_feature_mapping.sh : \
     executable script to run [./scripts/fibril_site_input_feats_mapper.py] that would extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
     
     **params**: \
