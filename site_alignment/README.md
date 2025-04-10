@@ -119,18 +119,19 @@ Or
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=alignsites
  
+5- Activate the **alignsites** environment
 
+6- Map the defined sites to their calculted surface features using 
 
+    source 01_run_fibril_site_surface_feature_mapping.sh
 
-1- Create an inputs folder containing all the generated ply files for each site (e.g., Pol_1a_P1_convex_hull.ply)
-
-2- Create a CSV file containing the surface features information of the sites to be aligned using **fibril_site_input_feats_mapper.ipynb**
-
-3- Adjust the parameters in the **run_fibril_site_registeration.sh** file
-
-4- Activate the **alignsites** environment
-
-5- Run the alignments as follows 
+7- Run the all-vs-all alignment 
     
-    source run_fibril_site_registeration.sh
+    source 02_run_fibril_site_registeration.sh
+
+8- Run the alignment analysis 
+    
+    source 03_run_fibril_site_alignment_analysis.sh
+
+or through the **fibril_site_alignment_analysis.ipynb** notebook
 
