@@ -13,9 +13,9 @@ def create_parser():
     :return: the parser object.
     """
     parse = argparse.ArgumentParser()
-    parse.add_argument("--site_src_dir",     type=str, nargs=1, help="Path to the defined fibril sites.")
-    parse.add_argument("--input_feats_src",  type=str, nargs=1, help="Folder contaning MaSIF calculated surface features.")
-    parse.add_argument("--output_folder",    type=str, nargs=1, help="Path to results export folder root.")
+    parse.add_argument("--site_src_dir",     type=str, nargs=1, help="Path to folder containing the defined fibril sites.")
+    parse.add_argument("--input_feats_src",  type=str, nargs=1, help="Path to folder contaning MaSIF calculated surface features.")
+    parse.add_argument("--output_folder",    type=str, nargs=1, help="Path to root folder for exporting.")
     return parse
 
 def parse_args(parser):
