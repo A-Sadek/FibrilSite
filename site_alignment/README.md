@@ -1,8 +1,9 @@
 # FibrilSite  – Site Alignment
-
-To run the defined sites alignment:
+To run the defined fibril sites alignment and alignment analysis:
 
 ## Provided scripts:
+- 01_run_fibril_site_surface_feature_mapping.sh : executable script to run 
+
  - fibril_site_registeration.py     : code for running the alignments
  - run_fibril_site_registeration.sh : script to run the alignments
  - fibril_site_input_feats_mapper.ipynb : notebook to map the defined fibril site (i.e., pocket) points to their computed surface features
