@@ -1,10 +1,8 @@
 # This script is to run the fibril site registeration 
 
 ## libraries
-import os, glob, argparse, datetime
-import numpy as np
-import pandas as pd
-from fibrilsite import execute_global_registration, refine_registration, ply_parser_hull, best_registration, global_reg_pipeline, registrate_all_pockets
+import argparse
+from fibrilsite.site_alignment import *
 
 ## Functions
 def create_parser():
@@ -42,28 +40,14 @@ def main():
     output = os.path.join(os.path.abspath(output_root), str(datetime.date.today())+"_registration_outputs")
     os.makedirs(output, exist_ok=0)
     
-    # check point
-    print(f"loaded df_pockets {df_pockets.shape}")
-    
     ### get the path to ply files of each pocket
     path_dic = {}
     
     for path in glob.iglob(os.path.join(files, "*", "*_hull.ply")):
         path_dic[os.path.basename(path).split('convex')[0].strip('_')] = path
-    
-    ### creating a list of the pocket names based on the directory dictionnary
-    names = np.array(list(path_dic.keys()))
-    #print(names)
         
     #### perform alignments
-    """ 
-    The pipeline has the following characteristics:
-        - Uses input features (including shape index) as features
-        - Matches on the correspondence set
-    """
-    df_input = registrate_all_pockets(n_regs=5, path_dic=path_dic, df_pockets=df_pockets, output=output)
-    df_input.to_csv(f'{output}/{datetime.date.today()}_all_pockets_input_features_registered.csv')
-    
+    registrate_all_pockets(n_regs=5, path_dic=path_dic, df_pockets=df_pockets, output=output)
     print('Alignments done !')
     
     return None
