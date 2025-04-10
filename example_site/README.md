@@ -1,2 +1,0 @@
-# FibrilSite  – Example site
-
