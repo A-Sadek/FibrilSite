@@ -80,10 +80,20 @@ To run the defined fibril sites alignment and alignment analysis:
         - invitro_aSyn_to_other_amyloids : Folder containing two CSV files for site matches between in vitro aSyn fibrils and ex vivo fibrils of other amyloids \
              [ 1-"all_{}_matches.csv" : all site matches | 2-"sel_{}_matches.csv" : site matches satisfying the site similarity condition ] \
         - identified_matches_alignments : Folder containing fibril and site alignments for identified site matches
-     
-  
-    
-    
+      
+      **exported information**: \
+        - pocket_matches       : a tuple of pocket (site) matches \
+        - pocket_pairs         : a list of pocket (site) matches \
+        - source_pocket | target_pocket : aligned pockets (sites) names\
+        - icp_rmse             : RMSE computed on inlier correspondences following ICP (Iterative Closest Point) \
+        - icp_fitness_source   : alignment quality following ICP, calculated based on source pocket \
+        - icp_fitness_target   : alignment quality following ICP, calculated based on target pocket \
+        - icp_nb_corres        : number of correspondences following ICP \
+        - size_source | size_target : number of points of the size and target pockets (sites) \
+        - src2target_size_ratio : ratio of the pocket match sizes, calculated as number of points of source pocket / number of points of target pocket \
+        - source_pocket_fibril | target_pocket_fibril    : name of respective fibril for the defined pockets (sites) \
+        - combined_fitness_score (**SSmax**): best alignment between two pockets (sites), SSmax = max(icp_fitness_source, icp_fitness_target) \
+        - icp_mean_input_diff (**Fdiff**): surface features similarity between the pocket (site) matches, calculated as the Euclidean distance between the surface features computed on inlier correspondences following ICP 
 
 ## Usage
 1- Create a conda environment with python version 3.8
