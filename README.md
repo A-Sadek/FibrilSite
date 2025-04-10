@@ -41,5 +41,3 @@ Or
 
 ### Fibril sites alignment 
 The defined sites are aligned in an all vs all manner using Open3d, then analysed based on the shared surface fraction and the similarity of their surface geometrical and physicochemical features using the provided scripts and instructions in the site_alignment folder
-
-
