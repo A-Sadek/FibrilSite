@@ -15,12 +15,12 @@ def create_parser():
     parse = argparse.ArgumentParser()
     parse.add_argument("--site_src_dir",     type=str,   nargs=1, help="Path to folder containing the defined fibril sites.")
     parse.add_argument("--fibrils_pdb_src",  type=str,   nargs=1, help="Path to folder containing fibrils pdb files.")
-    parse.add_argument("--reg_results_src",  type=str,   nargs=1, help="Path to folder containing alignment npy files.")
+    parse.add_argument("--reg_results_src",  type=str,   nargs=1, help="Path to folder containing alignment results npy files.")
     parse.add_argument("--sites_info_csv",   type=str,   nargs=1, help="Path to CSV file containing fibril sites info.")
     parse.add_argument("--sites_align_csv",  type=str,   nargs=1, help="Path to CSV file containing fibril sites alignment results.")
     parse.add_argument("--SSmax",            type=float, nargs=1, help="Threshold for Site Surface overlap between site matches, recommended >= 0.5.")
     parse.add_argument("--Fdiff",            type=float, nargs=1, help="Threshold for Surface feature difference between site matches, recommended <= 0.6.")
-    parse.add_argument("--output_folder",    type=str,   nargs=1, help="Path to results export folder root.")
+    parse.add_argument("--output_folder",    type=str,   nargs=1, help="Path to root folder for exporting.")
     return parse
 
 os.path.abspath('./2025-04-08_registration_outputs/2025-04-08_all_sites_alignment_results.csv')

@@ -3,15 +3,15 @@ To run the defined fibril sites alignment and alignment analysis:
 
 ## Provided scripts:
 - **01_run_fibril_site_surface_feature_mapping.sh :** \
-    executable script to run *[./scripts/fibril_site_input_feats_mapper.py]* that will extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
+    executable script to run *[./scripts/fibril_site_input_feats_mapper.py]* that will extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files.
     
     **params**: \
-        - site_src_dir    : Path to folder containing the defined fibril sites. \
+        - site_src_dir    : Path to folder containing the defined fibril sites \
         - input_feats_src : Path to folder contaning MaSIF calculated surface features *[/data_preparation/04b-precomputation_12A/precomputation]* \
-        - output_folder   : Path to root folder for exporting.
+        - output_folder   : Path to root folder for exporting
 
     **output**: \
-        - {date}_all_sites_parsed.csv      : CSV containing information of all defined sites. \
+        - {date}_all_sites_parsed.csv      : CSV containing information of all defined sites \
         - {date}_all_sites_input_feats.csv : CSV containing information of all defined sites including the calculated surface features
     
     **exported information**: \
@@ -41,12 +41,12 @@ To run the defined fibril sites alignment and alignment analysis:
     executable script to run *[./scripts/fibril_site_registeration.py]* that will align the defined fibril sites based on surface features. 
 
     **params**: \
-        - info_file     : CSV containing information of all defined sites including the calculated surface features. \
+        - info_file     : CSV containing information of all defined sites including the calculated surface features \
         - sites_folder  : Path to folder containing the defined fibril sites \
-        - output_folder : Path to root folder for exporting.
+        - output_folder : Path to root folder for exporting
      
      **output**: \
-        - o3d_objects_npy                    : Folder containing the numpy site alignment results for site-pairs. \
+        - o3d_objects_npy                    : Folder containing the numpy site alignment results for site-pairs \
         - {date}_all_sites_alignment_results : CSV containing information of fibril sites alignment
    
     **exported information**: \
@@ -59,10 +59,26 @@ To run the defined fibril sites alignment and alignment analysis:
         - icp_nb_corres                 : number of correspondences following ICP \
         - size_source | size_target     : number of points of the size and target pockets (sites)
 
+- **03_run_fibril_site_alignment_analysis.sh :**
+    executable script to run *[./scripts/fibril_site_alignment_analysis.py]* that will analyse the sites alignment results. \
 
+    **params**: \
+        - site_src_dir     : Path to folder containing the defined fibril sites \
+        - fibrils_pdb_src  : Path to folder containing fibrils pdb files \
+        - reg_results_src  : Path to folder containing alignment results npy files \
+        - sites_info_csv   : Path to CSV file containing fibril sites info \
+        - sites_align_csv  : Path to CSV file containing fibril sites alignment results \
+        - SSmax            : Threshold for Site Surface overlap between site matches, recommended >= 0.5 \
+        - Fdiff            : Threshold for Surface feature difference between site matches, recommended <= 0.6 \
+        - output_folder    : Path to root folder for exporting
 
- - run_fibril_site_registeration.sh : script to run the alignments
- - fibril_site_input_feats_mapper.ipynb : notebook to map the defined fibril site (i.e., pocket) points to their computed surface features
+     **output**: \
+        - all_vs_all   : Folder containing CSV files with the top 5 matches for each pocket based on surface feature similarity only  \
+        - aSyn_to_aSyn : Folder containing two CSV files for: \
+                            1- all_{}_matches.csv : all site matches among ex vivo aSyn fibrils \
+                            2- sel_{}_matches.csv : site matches among ex vivo aSyn fibrils satisfying the site similarity condition \
+    
+    
 
 ## Usage
 1- Create a conda environment with python version 3.8
