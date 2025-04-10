@@ -28,6 +28,7 @@ To execute the notebook you need to install the code package containing all the 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 Or
+    
     pip install fibrilsite
 
 4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
