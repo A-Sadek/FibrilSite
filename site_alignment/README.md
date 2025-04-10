@@ -74,9 +74,14 @@ To run the defined fibril sites alignment and alignment analysis:
 
      **output**: \
         - all_vs_all   : Folder containing CSV files with the top 5 matches for each pocket based on surface feature similarity only  \
-        - aSyn_to_aSyn : Folder containing two CSV files for: \
-                            1- all_{}_matches.csv : all site matches among ex vivo aSyn fibrils \
-                            2- sel_{}_matches.csv : site matches among ex vivo aSyn fibrils satisfying the site similarity condition \
+        - aSyn_to_aSyn : Folder containing two CSV files for site matches among ex vivo aSyn fibrils \
+        - aSyn_to_invitro_aSyn : Folder containing two CSV files for site matches between ex vivo and in vitro aSyn fibrils \
+        - aSyn_to_other_amyloids : Folder containing two CSV files for site matches between ex vivo fibrils of aSyn and other amyloids \
+        - invitro_aSyn_to_other_amyloids : Folder containing two CSV files for site matches between in vitro aSyn fibrils and ex vivo fibrils of other amyloids \
+             [ 1-"all_{}_matches.csv" : all site matches | 2-"sel_{}_matches.csv" : site matches satisfying the site similarity condition ] \
+        - identified_matches_alignments : Folder containing fibril and site alignments for identified site matches
+     
+  
     
     
 
