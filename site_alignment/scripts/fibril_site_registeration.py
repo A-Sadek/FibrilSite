@@ -11,9 +11,9 @@ def create_parser():
     :return: the parser object.
     """
     parse = argparse.ArgumentParser()
-    parse.add_argument("--info_file",     type=str, nargs=1, help="CSV containing the sites input feats.")
-    parse.add_argument("--sites_folder",  type=str, nargs=1, help="Folder contaning site files.")
-    parse.add_argument("--output_folder", type=str, nargs=1, help="Path to results export folder.")
+    parse.add_argument("--info_file",     type=str, nargs=1, help="CSV containing information of all defined sites including the calculated surface features.")
+    parse.add_argument("--sites_folder",  type=str, nargs=1, help="Path to folder containing the defined fibril sites.")
+    parse.add_argument("--output_folder", type=str, nargs=1, help="Path to root folder for exporting..")
     return parse
 
 def parse_args(parser):

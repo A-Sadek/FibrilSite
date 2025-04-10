@@ -3,7 +3,7 @@ To run the defined fibril sites alignment and alignment analysis:
 
 ## Provided scripts:
 - 01_run_fibril_site_surface_feature_mapping.sh : \
-    executable script to run [./scripts/fibril_site_input_feats_mapper.py] that would extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
+    executable script to run [./scripts/fibril_site_input_feats_mapper.py] that will extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
     
     **params**: \
         - site_src_dir    : Path to folder containing the defined fibril sites. \
@@ -37,11 +37,30 @@ To run the defined fibril sites alignment and alignment analysis:
         - input_hphob          : surface point calculated hydropathy value \
         - input_hbonds         : surface point calculated hydrogen-bond donor/acceptor potential 
 
+- 02_run_fibril_site_registeration.sh : \
+    executable script to run [./scripts/fibril_site_registeration.py] that will align the defined fibril sites based on surface features. 
+
+    **params**: \
+        - info_file     : CSV containing information of all defined sites including the calculated surface features. \
+        - sites_folder  : Path to folder containing the defined fibril sites \
+        - output_folder : Path to root folder for exporting.
+     
+     **output**: \
+        - o3d_objects_npy                    : Folder containing the numpy site alignment results for site-pairs. \
+        - {date}_all_sites_alignment_results : CSV containing information of fibril sites alignment
+   
+    **exported information**: \
+        - source_pocket | target_pocket : aligned pockets (sites) names\
+        - ransac_rmse                   : RMSE (Root Mean Square Error) computed on inlier correspondences following RANSAC (Random Sample Consensus) \
+        - ransac_fitness                : alignment quality following RANSAC \
+        - ransac_nb_corres              : number of correspondences following RANSAC \
+        - icp_rmse                      : RMSE computed on inlier correspondences following ICP (Iterative Closest Point) \
+        - icp_fitness                   : alignment quality following ICP \
+        - icp_nb_corres                 : number of correspondences following ICP \
+        - size_source | size_target     : number of points of the size and target pockets (sites)
 
 
 
-
- - fibril_site_registeration.py     : code for running the alignments
  - run_fibril_site_registeration.sh : script to run the alignments
  - fibril_site_input_feats_mapper.ipynb : notebook to map the defined fibril site (i.e., pocket) points to their computed surface features
 
