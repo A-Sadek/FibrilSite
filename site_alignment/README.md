@@ -5,36 +5,36 @@ To run the defined fibril sites alignment and alignment analysis:
 - 01_run_fibril_site_surface_feature_mapping.sh : 
     executable script to run [./scripts/fibril_site_input_feats_mapper.py] that would extract the surface features for the defined fibril site points following MaSIF processing of the fibril pdb files
     
-    params:
-        - site_src_dir    : Path to folder containing the defined fibril sites.
-        - input_feats_src : Path to folder contaning MaSIF calculated surface features [/data_preparation/04b-precomputation_12A/precomputation]
+    **params**: \
+        - site_src_dir    : Path to folder containing the defined fibril sites. \
+        - input_feats_src : Path to folder contaning MaSIF calculated surface features [/data_preparation/04b-precomputation_12A/precomputation] \
         - output_folder   : Path to root folder for exporting.
 
-    output:
-        - {date}_all_sites_parsed.csv      : CSV containing information of all defined sites.
+    **output**: \
+        - {date}_all_sites_parsed.csv      : CSV containing information of all defined sites. \
         - {date}_all_sites_input_feats.csv : CSV containing information of all defined sites including the calculated surface features
     
-    exported information:
-        - fibril               : fibril PDB id
-        - pocket_id            : pocket (site) name
-        - isolation            : level of pocket definition
-        - MaSIF_index          : pocket (site) surface points MaSIF index -> needed for mapping 
-        - atom_type            : surface point atom type – if applicable
-        - chain                : fibril chain
-        - coords               : surface point atomic coordinates – if applicable
-        - point_direction      : dot product of surface normals of one anchor point and its neighbour -> needed for pocket expansion
-        - resid                : residue id
-        - resname              : residue name
-        - sasa                 : per residue solvent-accessible surface area
-        - surf_charge          : ply-file parsed surface electrostatics value
-        - surf_coords          : ply-file parsed surface coordinates
-        - surf_hbond           : ply-file parsed hydrogen-bond donor/acceptor potential 
-        - surf_hphob           : ply-file parsed hydropathy value
-        - surf_norm_fibril_dot : dot product of point surface normal and fibril elongation axis
-        - surf_normals         : surface point normal
-        - input_si             : surface point calculated shape index
-        - input_charge         : surface point calculated electrostatics value
-        - input_hphob          : surface point calculated hydropathy value
+    **exported information**: \
+        - fibril               : fibril PDB id \
+        - pocket_id            : pocket (site) name \
+        - isolation            : level of pocket definition \
+        - MaSIF_index          : pocket (site) surface points MaSIF index -> needed for mapping \
+        - atom_type            : surface point atom type – if applicable \
+        - chain                : fibril chain \
+        - coords               : surface point atomic coordinates – if applicable \
+        - point_direction      : dot product of surface normals of one anchor point and its neighbour -> needed for pocket expansion \
+        - resid                : residue id \
+        - resname              : residue name \
+        - sasa                 : per residue solvent-accessible surface area \
+        - surf_charge          : ply-file parsed surface electrostatics value \
+        - surf_coords          : ply-file parsed surface coordinates \
+        - surf_hbond           : ply-file parsed hydrogen-bond donor/acceptor potential \
+        - surf_hphob           : ply-file parsed hydropathy value \
+        - surf_norm_fibril_dot : dot product of point surface normal and fibril elongation axis \
+        - surf_normals         : surface point normal \
+        - input_si             : surface point calculated shape index \
+        - input_charge         : surface point calculated electrostatics value \
+        - input_hphob          : surface point calculated hydropathy value \
         - input_hbonds         : surface point calculated hydrogen-bond donor/acceptor potential 
 
 
