@@ -8,7 +8,7 @@ Fibril structures were pre-processed and surface features were computed using th
 > Gainza, P. *et al.* *Nat Methods* **17**, 184–192 (2020). [https://doi.org/10.1038/s41592-019-0666-6]
 
 ### Fibril sites definition
-Fibril site definition is peformed as in the *fibril_grooves_extractor.ipynb* notebook. 
+Fibril site definition is peformed as in the *fibril_grooves_extractor.ipynb* notebook.
 
 To execute the notebook you need to install the code package containing all the required funtions as follows: 
 
@@ -27,9 +27,7 @@ To execute the notebook you need to install the code package containing all the 
 4- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
-
 Or
-
     pip install fibrilsite
 
 4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
@@ -41,3 +39,7 @@ Or
 
 ### Fibril sites alignment 
 The defined sites are aligned in an all vs all manner using Open3d, then analysed based on the shared surface fraction and the similarity of their surface geometrical and physicochemical features using the provided scripts and instructions in the site_alignment folder
+
+### Data for the work
+All data are freely accessible on Zenodo ().
+
