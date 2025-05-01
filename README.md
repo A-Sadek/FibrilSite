@@ -14,7 +14,7 @@ To run the notebook you need to install the code package containing all the requ
 
 1- Create a conda environment with python version 3.6
 
-    conda create -n fibrilsite python=3.6 -y
+    conda create -n fibrilsite python=3.6
 
 2- Install the The StructuralBioInformatics Library
 
