@@ -100,7 +100,7 @@ The *[./scripts/fibril_site_alignment_analysis.py]* script is tailored for the c
 ## Usage
 1- Create a conda environment with python version 3.8
     
-    conda create -n alignsites python=3.8 -y
+    conda create -n alignsites python=3.8
 
 2- Install the code package in the **fibrilsite** environment 
 
@@ -112,7 +112,7 @@ Or
 
 3- Install Openbabel
 
-    conda install conda-forge::openbabel -y
+    conda install conda-forge::openbabel
     
 4- Export the **alignsites** environment to Jupyter as follows:
 
