@@ -27,9 +27,6 @@ To run the notebook you need to install the code package containing all the requ
 4- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
-Or
-    
-    pip install fibrilsite
 
 4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
 
@@ -42,5 +39,5 @@ Or
 The defined sites are aligned in an all vs all manner using Open3d, then analysed based on the shared surface fraction and the similarity of their surface geometrical and physicochemical features using the provided scripts and instructions in the site_alignment folder
 
 ### Data for the work
-All data are freely accessible on Zenodo (10.5281/zenodo.15192320).
+All data are freely accessible on Zenodo (https://doi.org/10.5281/zenodo.15192320).
 
