@@ -1,5 +1,6 @@
 # FibrilSite
-**FibrilSite** is a computational pipeline to define fibril sites (i.e., pockets) and identify shared features across a database of defined sites. 
+**FibrilSite** is a computational pipeline to define fibril sites (i.e., pockets) and identify shared features across a database of defined sites. The results of applying this framework to 61 sites from 19 fibril structures is reported in
+> Mapping the Structural Landscape of Amyloid Fibrils to Guide Polymorph-Specific Therapeutics
 
 Fibril surface sites are extracted from fibril surface as point clouds featurized with surface properties including Poisson–Boltzmann continuum electrostatics, hydrophobicity, shape index and hydrogen bond donors/acceptor patterns. 
 
