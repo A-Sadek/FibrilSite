@@ -21,17 +21,18 @@ To run the notebook you need to install the code package containing all the requ
 
     pip install StrBioInfo==0.9a0.dev1
 
-3- Install Pandas v.0.25.3
-    
-    pip install pandas==0.25.3
 
-4- Install the code package in the **fibrilsite** environment 
+3- Install the code package in the **fibrilsite** environment 
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
-4- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
+4- Install Pandas v.0.25.3
+    
+    pip install pandas==0.25.3
 
-5- Export the **fibrilsite** environment to Jupyter as follows:
+5- Install **PyMesh** in the **fibrilsite** environment following the instruction on https://pymesh.readthedocs.io/en/latest/installation.html 
+
+6- Export the **fibrilsite** environment to Jupyter as follows:
 
     conda install -c anaconda ipykernel -y
     python -m ipykernel install --user --name=fibrilsite
