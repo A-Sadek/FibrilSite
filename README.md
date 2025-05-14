@@ -8,8 +8,7 @@ Fibril surface sites are extracted from fibril surface as point clouds featurize
 
 ### Fibril structures preparation
 Fibril structures were pre-processed and surface features were computed using the **MaSIF site** tool within the MaSIF (Molecular Surface Interaction Fingerprinting) framework available at (https://github.com/LPDI-EPFL/masif.git), as described in 
-> Gainza, P. *et al.* *Nat Methods* **17**, 184–192 (2020). \
-https://doi.org/10.1038/s41592-019-0666-6
+> Gainza, P., Sverrisson, F., Monti, F. et al. Deciphering interaction fingerprints from protein molecular surfaces using geometric deep learning. Nat Methods 17, 184–192 (2020). https://doi.org/10.1038/s41592-019-0666-6
 
 ### Fibril sites definition
 Fibril site definition is peformed using the *fibril_grooves_extractor.ipynb* notebook.
