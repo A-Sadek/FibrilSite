@@ -1,14 +1,15 @@
 # FibrilSite
 **FibrilSite** is a computational pipeline to define fibril sites (i.e., pockets) and identify shared features across a database of defined sites. The results of applying this framework to 61 sites from 19 fibril structures is reported in
-> Mapping the Structural Landscape of Amyloid Fibrils to Guide Polymorph-Specific Therapeutics
-> Ahmed Sadek, Bruno E. Correia, Hilal A. Lashuel
-> https://doi.org/10.1101/2025.05.08.652887
+> Mapping the Structural Landscape of Amyloid Fibrils to Guide Polymorph-Specific Therapeutics \
+Ahmed Sadek, Bruno E. Correia, Hilal A. Lashuel \
+https://doi.org/10.1101/2025.05.08.652887
 
 Fibril surface sites are extracted from fibril surface as point clouds featurized with surface properties including Poisson–Boltzmann continuum electrostatics, hydrophobicity, shape index and hydrogen bond donors/acceptor patterns. 
 
 ### Fibril structures preparation
 Fibril structures were pre-processed and surface features were computed using the **MaSIF site** tool within the MaSIF (Molecular Surface Interaction Fingerprinting) framework available at (https://github.com/LPDI-EPFL/masif.git), as described in 
-> Gainza, P. *et al.* *Nat Methods* **17**, 184–192 (2020). [https://doi.org/10.1038/s41592-019-0666-6]
+> Gainza, P. *et al.* *Nat Methods* **17**, 184–192 (2020). \
+https://doi.org/10.1038/s41592-019-0666-6
 
 ### Fibril sites definition
 Fibril site definition is peformed using the *fibril_grooves_extractor.ipynb* notebook.
