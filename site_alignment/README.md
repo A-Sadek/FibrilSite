@@ -97,6 +97,8 @@ To run the defined fibril sites alignment and alignment analysis:
     
 The *[./scripts/fibril_site_alignment_analysis.py]* script is tailored for the current study. For more customisation in case of site database expansion with sites from other fibrils, you would need to use the provided notebook **fibril_site_alignment_analysis.ipynb**. 
 
+> To reproduce the results from this paper, use the provided dataset at Zenodo (https://doi.org/10.5281/zenodo.15192320) and run the scripts 01, 02, 03 sequentially.
+
 ## Usage
 1- Create a conda environment with python version 3.8
     
