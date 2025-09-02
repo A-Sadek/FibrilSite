@@ -216,9 +216,9 @@ def align_site_fibrils(align_out:str, src_pockets_paths:list, ply_files:list, fi
     
         pocket01_name = pocket01_end_xyz.split('/')[-1].split('_transformed')[0]
         pocket02_name = pocket02_end_xyz.split('/')[-1].split('_aligned')[0]
-    
-        pocket01_start_xyz = [p.strip() for p in src_pockets_paths if pocket01_name in p][0]
-        pocket02_start_xyz = [p.strip() for p in src_pockets_paths if pocket02_name in p][0]
+
+        pocket01_start_xyz = [p.strip() for p in src_pockets_paths if pocket01_name in p.split("/")[-2].split("_")][0]
+        pocket02_start_xyz = [p.strip() for p in src_pockets_paths if pocket02_name in p.split("/")[-2].split("_")][0]
         
         # fix the xyz files to match the obabel format
         pocket01_start_xyz = fix_xyz(name=pocket01_name+'_start', file=pocket01_start_xyz, output=temp_out02)
