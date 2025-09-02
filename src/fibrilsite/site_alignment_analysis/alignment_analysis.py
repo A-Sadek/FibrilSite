@@ -154,8 +154,8 @@ def align_site_pcd(df:pd.DataFrame, ply_files:list, input_feats_npy:list, output
         os.makedirs(out_temp, exist_ok=False)
         
         # get the pockets ply file paths
-        src_ply    = [p for p  in ply_files if src_pocket.split("_")[-1]    in p][0]
-        target_ply = [p for p  in ply_files if target_pocket.split("_")[-1] in p][0]
+        src_ply    = [p for p  in ply_files if src_pocket.split("_")[-1]    in os.path.basename(p).split("_convex")[0].split("_")][0]
+        target_ply = [p for p  in ply_files if target_pocket.split("_")[-1] in os.path.basename(p).split("_convex")[0].split("_")][0]
         
         # get the pockets registeration output py file path
         reg_npy = [
