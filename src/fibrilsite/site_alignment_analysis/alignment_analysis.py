@@ -245,13 +245,16 @@ def align_site_fibrils(align_out:str, src_pockets_paths:list, ply_files:list, fi
         transform_fibrils(file=pocket02_fibril, pocket=pocket02_name, mat=pocket02_mat, output=temp_out01)
     
         # load the pocket point clouds
-        pocket01_pcd_path = [p for p in ply_files if pocket01_name in p][0]
-        pocket02_pcd_path = [p for p in ply_files if pocket02_name in p][0]
+        pocket01_pcd_path = [p for p in ply_files if pocket01_name == os.path.basename(p).split("_convex")[0].split("_")[-1]][0]
+        pocket02_pcd_path = [p for p in ply_files if pocket02_name == os.path.basename(p).split("_convex")[0].split("_")[-1]][0]
     
         pocket01_pcd = o3d.io.read_point_cloud(pocket01_pcd_path, format='ply')
         pocket02_pcd = o3d.io.read_point_cloud(pocket02_pcd_path, format='ply')
     
-        reg_npy = [p for p in reg_results_paths if pocket01_name in p if pocket02_name in p][0]
+        reg_npy = [p for p in reg_results_paths 
+                   if pocket01_name in os.path.basename(p).split("_input-feats")[0].split("_")
+                   if pocket02_name in os.path.basename(p).split("_input-feats")[0].split("_")][0]
+        
         reg_results = np.load(reg_npy, allow_pickle=True).item()['icp_test']
     
         # prepare pocket01
