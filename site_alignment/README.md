@@ -108,10 +108,6 @@ The *[./scripts/fibril_site_alignment_analysis.py]* script is tailored for the c
 
     pip install git+https://github.com/A-Sadek/FibrilSite.git
 
-Or
-
-    pip install fibrilsite
-
 3- Install Openbabel
 
     conda install conda-forge::openbabel
